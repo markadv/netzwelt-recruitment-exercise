@@ -1,10 +1,9 @@
 import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = ({ isAuth, children }: { isAuth: boolean; children: any }) => {
+const ProtectedRoute = ({ isAuth, navigateTo, children }: { isAuth: boolean; navigateTo: string; children: any }) => {
 	if (!isAuth) {
-		return <Navigate to="/account/login" replace />;
+		return <Navigate to={navigateTo} replace />;
 	}
-
 	return children;
 };
 
