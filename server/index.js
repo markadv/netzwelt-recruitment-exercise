@@ -26,7 +26,7 @@ app.post("/account/login", async (req, res) => {
 
 app.get("/territories/all", async (req, res) => {
 	axios.get("https://netzwelt-devtest.azurewebsites.net/Territories/All").then((response) => {
-		console.log(response.data.data);
+		res.json(response.data.data);
 	});
 });
 
